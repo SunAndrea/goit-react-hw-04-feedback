@@ -1,19 +1,25 @@
 import PropTypes from 'prop-types';
+import { nanoid } from 'nanoid';
 
-export const FeedbackOptions = ({ options, onLeaveFeedback }) => {
+export const FeedbackOptions = ({ onGood, onNeutral, onBad }) => {
   return (
     <div>
-      {options.map(option => (
-        <button key={Math.random()} type="button" onClick={onLeaveFeedback}>
-          {option}
-        </button>
-      ))}
+      <button onClick={onGood} key={nanoid()} type="button">
+        good
+      </button>
+      <button onClick={onNeutral} key={nanoid()} type="button">
+        neutral
+      </button>
+      <button onClick={onBad} key={nanoid()} type="button">
+        bad
+      </button>
     </div>
   );
 };
 FeedbackOptions.propTypes = {
-  options: PropTypes.array.isRequired,
-  onLeaveFeedback: PropTypes.func.isRequired,
+  onGood: PropTypes.func.isRequired,
+  onNeutral: PropTypes.func.isRequired,
+  onBad: PropTypes.func.isRequired,
 };
 
 export default FeedbackOptions;

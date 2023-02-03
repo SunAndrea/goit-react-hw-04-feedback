@@ -11,7 +11,7 @@ export const Statistics = ({
     <ul>
       <li>
         Good:
-        <span> {good}</span>
+        <span> {good} </span>
       </li>
       <li>
         Neutral:
@@ -19,7 +19,7 @@ export const Statistics = ({
       </li>
       <li>
         Bad:
-        <span> {bad}</span>
+        <span> {bad} </span>
       </li>
       <li>
         Total:
